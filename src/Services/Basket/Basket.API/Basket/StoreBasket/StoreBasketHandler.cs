@@ -13,16 +13,16 @@ public class StoreBasketCommandValidator : AbstractValidator<StoreBasketCommand>
 	}
 }
 
-public class StoreBasketCommandHandler(/*IBasketRepository repository, DiscountProtoService.DiscountProtoServiceClient discountProto*/)
+public class StoreBasketCommandHandler(IBasketRepository repository /*, DiscountProtoService.DiscountProtoServiceClient discountProto*/)
 	: ICommandHandler<StoreBasketCommand, StoreBasketResult>
 {
 	public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
 	{
 		//await DeductDiscount(command.Cart, cancellationToken);
 
-		//await repository.StoreBasket(command.Cart, cancellationToken);
+		await repository.StoreBasket(command.Cart, cancellationToken);
 
-		return new StoreBasketResult("asd" /*command.Cart.UserName*/);
+		return new StoreBasketResult(command.Cart.UserName);
 	}
 
 	/*private async Task DeductDiscount(ShoppingCart cart, CancellationToken cancellationToken)
