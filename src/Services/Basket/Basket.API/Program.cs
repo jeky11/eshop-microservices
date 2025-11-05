@@ -5,9 +5,10 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddCarter();
 
+//Application Services
 var assembly = typeof(Program).Assembly;
+builder.Services.AddCarter();
 builder.Services.AddMediatR(config =>
 {
 	config.RegisterServicesFromAssembly(assembly);
@@ -16,6 +17,7 @@ builder.Services.AddMediatR(config =>
 });
 builder.Services.AddValidatorsFromAssembly(assembly);
 
+//Data Services
 builder.Services.AddMarten(opts =>
 {
 	opts.Connection(builder.Configuration.GetConnectionString("Database")!);
@@ -31,10 +33,12 @@ builder.Services.AddStackExchangeRedisCache(options =>
 	//options.InstanceName = "Basket";
 });
 
+//Cross-Cutting Services
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
 builder.Services.AddHealthChecks()
-	.AddNpgSql(builder.Configuration.GetConnectionString("Database")!);
+	.AddNpgSql(builder.Configuration.GetConnectionString("Database")!)
+	.AddRedis(builder.Configuration.GetConnectionString("Redis")!);
 
 var app = builder.Build();
 
