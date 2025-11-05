@@ -5,13 +5,10 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<UserSecretsId>9c5dcded-fb88-4bbf-bfb6-0cbedbc2080b</UserSecretsId>
+		<DockerfileContext>..\..\..</DockerfileContext>
+		<DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
 	</PropertyGroup>
-
-	<ItemGroup>
-	  <Content Include="..\..\..\.dockerignore">
-	    <Link>.dockerignore</Link>
-	  </Content>
-	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj" />
@@ -24,6 +21,7 @@
 	  <PackageReference Include="Carter" Version="9.0.0" />
 	  <PackageReference Include="Marten" Version="8.13.3" />
 	  <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="9.0.10" />
+	  <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
 	  <PackageReference Include="Scrutor" Version="6.1.0" />
 	</ItemGroup>
 

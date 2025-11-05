@@ -22,10 +22,4 @@
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1"/>
 	</ItemGroup>
 
-	<ItemGroup>
-		<Content Include="..\..\..\.dockerignore">
-			<Link>.dockerignore</Link>
-		</Content>
-	</ItemGroup>
-
 </Project>
