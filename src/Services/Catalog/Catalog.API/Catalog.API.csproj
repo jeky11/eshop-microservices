@@ -17,8 +17,8 @@
 	<ItemGroup>
 		<PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0"/>
 		<PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0"/>
-		<PackageReference Include="Carter" Version="9.0.0"/>
-		<PackageReference Include="Marten" Version="8.13.3" />
+		<PackageReference Include="Carter" Version="10.0.0" />
+		<PackageReference Include="Marten" Version="8.15.2" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1"/>
 	</ItemGroup>
 
