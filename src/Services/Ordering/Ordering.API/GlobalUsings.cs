@@ -1,5 +1,6 @@
 ﻿// Global using directives
 
+global using BuildingBlocks.Exceptions.Handler;
 global using BuildingBlocks.Pagination;
 global using Carter;
 global using Mapster;
