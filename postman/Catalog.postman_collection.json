@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "877c48b2-70a7-4815-a37c-f727bb3338e3",
+		"name": "Catalog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49488896"
+	},
+	"item": [
+		{
+			"name": "GetProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{catalog_url}}/products?PageNumber=1&PageSize=50",
+					"host": [
+						"{{catalog_url}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "PageNumber",
+							"value": "1"
+						},
+						{
+							"key": "PageSize",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{catalog_url}}/products/019a0c62-48f8-40bd-bc58-d67758e730ae",
+					"host": [
+						"{{catalog_url}}"
+					],
+					"path": [
+						"products",
+						"019a0c62-48f8-40bd-bc58-d67758e730ae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HealthCheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{catalog_url}}/health",
+					"host": [
+						"{{catalog_url}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductByCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{catalog_url}}/products/category/c1",
+					"host": [
+						"{{catalog_url}}"
+					],
+					"path": [
+						"products",
+						"category",
+						"c1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"bbbb\",\r\n    \"category\": [\r\n        \"c1\",\r\n        \"c2\"\r\n    ],\r\n    \"description\": \"adsadasdas\",\r\n    \"imageFile\": \"sdfsdfsdf\",\r\n    \"price\": 199\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{catalog_url}}/products",
+					"host": [
+						"{{catalog_url}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"5334c996-8457-4cf0-815c-ed2b77c4ff61\",\r\n    \"name\": \"IPhone XXXX\",\r\n    \"category\": [\r\n        \"Smart Phone\"\r\n    ],\r\n    \"description\": \"This phone is the company's biggest change to its flagship smartphone in years. It includes a borderless.\",\r\n    \"imageFile\": \"product-1.png\",\r\n    \"price\": 950.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{catalog_url}}/products",
+					"host": [
+						"{{catalog_url}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProduct",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{catalog_url}}/products/019a1046-7aa2-40a0-8bf0-6681e9cb5903",
+					"host": [
+						"{{catalog_url}}"
+					],
+					"path": [
+						"products",
+						"019a1046-7aa2-40a0-8bf0-6681e9cb5903"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

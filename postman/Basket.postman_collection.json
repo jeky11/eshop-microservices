@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "c0b3cbf6-aa24-49fe-914e-ab3ea3173771",
+		"name": "Basket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49488896"
+	},
+	"item": [
+		{
+			"name": "DeleteBasket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{basket_url}}/basket/swn",
+					"host": [
+						"{{basket_url}}"
+					],
+					"path": [
+						"basket",
+						"swn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StoreBasket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cart\": {\r\n        \"userName\": \"test2\",\r\n        \"items\": [{\r\n            \"Quantity\": 2,\r\n            \"Color\": \"Red\",\r\n            \"Price\": 500,\r\n            \"ProductId\": \"c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914\",\r\n            \"ProductName\": \"Samsung 10\"\r\n        }]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basket_url}}/basket",
+					"host": [
+						"{{basket_url}}"
+					],
+					"path": [
+						"basket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HealthCheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basket_url}}/health",
+					"host": [
+						"{{basket_url}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBasketById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basket_url}}/basket/test2",
+					"host": [
+						"{{basket_url}}"
+					],
+					"path": [
+						"basket",
+						"test2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
