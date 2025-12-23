@@ -1,11 +1,12 @@
-﻿using Ordering.Application.Orders.Commands.CreateOrder;
+﻿using BuildingBlocks.Messaging.Events;
+using MassTransit;
+using Ordering.Application.Orders.Commands.CreateOrder;
 
 namespace Ordering.Application.Orders.EventHandlers.Integration;
 
-public class BasketCheckoutEventHandler(ISender sender, ILogger<BasketCheckoutEventHandler> logger)
-	//: IConsumer<BasketCheckoutEvent>
+public class BasketCheckoutEventHandler(ISender sender, ILogger<BasketCheckoutEventHandler> logger) : IConsumer<BasketCheckoutEvent>
 {
-	/*public async Task Consume(ConsumeContext<BasketCheckoutEvent> context)
+	public async Task Consume(ConsumeContext<BasketCheckoutEvent> context)
 	{
 		// TODO: Create new order and start order fullfillment process
 		logger.LogInformation("Integration Event handled: {IntegrationEvent}", context.Message.GetType().Name);
@@ -36,5 +37,5 @@ public class BasketCheckoutEventHandler(ISender sender, ILogger<BasketCheckoutEv
 			]);
 
 		return new CreateOrderCommand(orderDto);
-	}*/
+	}
 }
