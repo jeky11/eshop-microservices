@@ -11,6 +11,9 @@ services:
   order-db:
     image: mcr.microsoft.com/mssql/server
 
+  message-broker:
+    image: rabbitmq:management
+
   catalog-api:
     image: ${DOCKER_REGISTRY-}catalogapi
     build:
