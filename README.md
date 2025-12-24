@@ -32,3 +32,7 @@ https://www.udemy.com/course/microservices-architecture-and-implementation-on-do
 * Consume YarpApiGateway APIs using Refit Library with Generated HttpClientFactory
 * Cross-cutting concerns Logging, global Exception Handling and Health Checks
 * Dockerfile and docker-compose file for running Multi-container Docker environment
+
+![](structure.png)
+
+![](endpoint_ports.png)
